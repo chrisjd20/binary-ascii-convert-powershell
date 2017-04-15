@@ -12,7 +12,6 @@ function Convert-Binary-Ascii {
     } else {
         throw "Binary string must be divisible by 8. I.e. a multiple of 8"
     }
-
 }
 
 #Convert ascii to binary text
