@@ -1,13 +1,17 @@
 #Convert Binary(in ascii text) to ascii
 function Convert-Binary-Ascii {
     Param ([string]$binary)
-    $asciiText = ''
-    $binaryArray = $binary  -split '(........)' | ? { $_ };
-    ForEach($line in $($binaryArray)) {
-        $_ = [Convert]::ToString([Convert]::ToInt32($line, 2), 16)
-        $asciiText += [char][byte]"0x$_"
+        if ($binary.length % 8 -eq 0) {
+            $asciiText = ''
+            $binaryArray = $binary  -split '(........)' | ? { $_ };
+            ForEach($line in $($binaryArray)) {
+                $_ = [Convert]::ToString([Convert]::ToInt32($line, 2), 16)
+                $asciiText += [char][byte]"0x$_"
+        }
+        return $asciiText
+    } else {
+        throw "Binary string must be divisible by 8. I.e. a multiple of 8"
     }
-    return $asciiText
 
 }
 
