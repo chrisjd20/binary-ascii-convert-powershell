@@ -15,7 +15,7 @@ function Convert-Binary-Ascii {
 function Convert-Ascii-Binary {
     Param ([string]$ascii)
     $binarytext = ""
-    $bytes = [System.Text.Encoding]::Unicode.GetBytes($string)
+    $bytes = [System.Text.Encoding]::Unicode.GetBytes($ascii)
     ForEach ($line in $($bytes)){
         if ($line -ne "0") {
             $tmp = [Convert]::ToString($Line,2)
