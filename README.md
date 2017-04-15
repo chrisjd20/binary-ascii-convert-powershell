@@ -7,5 +7,5 @@ PS > Convert-Binary-Ascii -binary "0100100001100101011011000110110001101111"</br
 Hello
 
 # Usage - Convert an ascii string into a binary string:
-PS > Convert-Ascii-Binary -ascii "Hello World" </br>
+PS > Convert-Ascii-Binary -ascii "Hello" </br>
 0100100001100101011011000110110001101111
